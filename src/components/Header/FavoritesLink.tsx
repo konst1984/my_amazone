@@ -1,11 +1,11 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { SetStateAction, useEffect, useState } from "react";
 import { useAppSelector } from "@/app/redux/hook";
 import Link from "next/link";
 
 const FavoritesLink = () => {
   const favoritesData = useAppSelector((state) => state.app.favorites);
-  const [favorites, setFavorites] = useState([]);
+  const [favorites, setFavorites] = useState<IStoreProduct[]>([]);
 
   useEffect(() => {
     setFavorites(favoritesData);

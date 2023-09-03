@@ -1,24 +1,35 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import { useAppDispatch } from "@/app/redux/hook";
-import { addToCart } from "@/app/redux/features/appSlice";
 import FormattedPrice from "@/components/FormattedPrice";
-import { ReadonlyURLSearchParams, useSearchParams } from "next/navigation";
-import Button, { ButtonTheme } from "@/components/Buttons/Button";
+import { useSearchParams } from "next/navigation";
 import ButtonsIcons from "@/components/Buttons/ButtonsIcons";
 import NotImage from "@/assets/images/no-image_400.webp";
 import NotFound from "@/app/(pages)/not-found";
 import ButtonAddCart from "@/components/Buttons/ButtonAdd";
 
-const buildProduct = (keys, fn) => {
-  return keys.reduce((acc, current) => {
-    acc[current] = fn(current);
-    return acc;
-  }, {});
+const buildProduct = (keys: string[], fn: (value: string) => string | null) => {
+  return keys.reduce(
+    (acc, current) => {
+      acc[current] = fn(current);
+      return acc;
+    },
+    {
+      brand: "",
+      category: "",
+      description: "",
+      image: "",
+      isNew: false,
+      oldPrice: 0,
+      price: 0,
+      quantity: 1,
+      title: "",
+      _id: 0,
+    }
+  );
 };
 
-const arrKeysProduct = [
+const arrKeysProduct: string[] = [
   "_id",
   "brand",
   "category",
@@ -30,18 +41,19 @@ const arrKeysProduct = [
   "title",
   "quantity",
 ];
+
 const ProductSingle = () => {
-  const dispatch = useAppDispatch();
   const searchParams = useSearchParams();
 
   const [product, setProduct] = useState<IProductProps | null>(null);
 
   useEffect(() => {
+    let prod: IProductProps | null = null;
     if (searchParams && searchParams.get("_id")) {
-      const prod = buildProduct(arrKeysProduct, searchParams.get);
-      setProduct(prod);
+      prod = buildProduct(arrKeysProduct, searchParams.get);
     }
-  }, []);
+    setProduct(prod);
+  }, [searchParams]);
 
   if (!product) {
     return <NotFound />;

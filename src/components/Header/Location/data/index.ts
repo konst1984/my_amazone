@@ -132,4 +132,4 @@ const countries: TypeCountries = [
   "Spain",
   "Belarus",
 ];
-export const countriesObjects = formatArrayToObj<TypeCountries>(countries);
+export const countriesObjects = formatArrayToObj(countries);

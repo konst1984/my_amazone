@@ -5,15 +5,15 @@ const nextConfig = {
     domains: [
       "i.ibb.co",
       "lh3.googleusercontent.com",
-      "avatars.githubusercontent.com"
-    ]
+      "avatars.githubusercontent.com",
+    ],
   },
   experimental: {
-    typedRoutes: false
+    typedRoutes: false,
   },
   typescript: {
-    ignoreBuildErrors: true
-  }
+    ignoreBuildErrors: true,
+  },
 };
 
 module.exports = nextConfig;

@@ -1,9 +1,7 @@
 import React, { Dispatch, SetStateAction, useEffect, useState } from "react";
 
 const useSideMenuOpen = () => {
-  const [isOpen, setOpenSideMenu] = useState<
-    boolean | Dispatch<SetStateAction<boolean>>
-  >(false);
+  const [isOpen, setOpenSideMenu] = useState<boolean>(false);
 
   const showSideMenu = () => {
     if (!isOpen) {

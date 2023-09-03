@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { SetStateAction, useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useAppSelector } from "@/app/redux/hook";
 
 const CartLink = () => {
   const cartData = useAppSelector((state) => state.app.cart);
-  const [cart, setCart] = useState([]);
+  const [cart, setCart] = useState<IStoreProduct[]>([]);
 
   useEffect(() => {
     setCart(cartData);

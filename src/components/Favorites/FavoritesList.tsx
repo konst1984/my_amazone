@@ -3,7 +3,6 @@ import React from "react";
 import FavoriteProduct from "@/components/Favorites/FavoriteProduct";
 import { useAppSelector } from "@/app/redux/hook";
 import Reset from "@/components/Buttons/Reset";
-import { resetFavorites } from "@/app/redux/features/appSlice";
 import EmptyFavoritesList from "@/components/Favorites/EmptyFavoritesList";
 import useHasMounted from "@/hooks/useHasMounted";
 import Loader from "@/components/GoodsSection/Loader";

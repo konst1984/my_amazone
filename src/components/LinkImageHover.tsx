@@ -11,8 +11,9 @@ const LinkImageHover = ({
 }) => {
   const href: { query: IStoreProduct | IProductProps; pathname: string } = {
     pathname: `/${product._id}`,
-    query: product,
+    query: { ...product },
   };
+
   return (
     <div className="relative group overflow-hidden">
       <Link href={href}>

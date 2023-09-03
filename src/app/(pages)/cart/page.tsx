@@ -5,7 +5,6 @@ import EmptyCart from "@/components/Cart/EmptyCart";
 import { useAppSelector } from "@/app/redux/hook";
 import CartProduct from "@/components/Cart/CartProduct";
 import Reset from "@/components/Buttons/Reset";
-import { resetCart } from "@/app/redux/features/appSlice";
 import useHasMounted from "@/hooks/useHasMounted";
 import Loader from "@/components/GoodsSection/Loader";
 

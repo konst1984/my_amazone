@@ -17,7 +17,6 @@ export const getLocationByZipCode = async (zipcode: string) => {
     }
     throw new Error("Unable fetch data!!!");
   } catch (error) {
-    console.error("error", error);
     throw new Error(error.message);
   }
 };
