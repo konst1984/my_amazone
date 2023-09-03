@@ -10,21 +10,11 @@ import {
 import Button, { ButtonTheme } from "@/components/Buttons/Button";
 import ProductCardContent from "@/components/GoodsSection/ProductCardContent";
 import NotImage from "@/assets/images/no-image_400.webp";
+import ButtonsChangeQuantity from "@/components/Cart/ButtonsChangeQuantity";
+import ButtonRemove from "@/components/Buttons/ButtonRemove";
 
-interface IProduct {
-  brand: string;
-  category: string;
-  description: string;
-  image: string;
-  isNew: boolean;
-  oldPrice: number;
-  price: number;
-  title: string;
-  _id: number;
-  quantity: number;
-}
 interface ICartGoodsProps {
-  product: IProduct;
+  product: IStoreProduct;
 }
 
 const CartProduct = ({ product }: ICartGoodsProps) => {
@@ -51,41 +41,8 @@ const CartProduct = ({ product }: ICartGoodsProps) => {
             total={true}
           />
           <div className="flex items-center gap-6">
-            <div className="flex items-center mt-1 justify-between border border-gray-300 px-4 py-1 rounded-full w-28 shadow-lg shadow-gray-300">
-              <button
-                onClick={() =>
-                  dispatch(
-                    increaseQuantity({
-                      ...product,
-                      quantity: 1,
-                    })
-                  )
-                }
-                className="text-black w-6 h-6 flex items-center justify-center rounded-full text-base bg-transparent hover:bg-gray-300 cursor-pointer decoration-purple-300"
-              >
-                <LuPlus />
-              </button>
-              <span className="text-black">{quantity}</span>
-              <button
-                onClick={() =>
-                  dispatch(
-                    decreaseQuantity({
-                      ...product,
-                      quantity: 1,
-                    })
-                  )
-                }
-                className="text-black w-6 h-6 flex items-center justify-center rounded-full text-base bg-transparent hover:bg-gray-300 cursor-pointer decoration-purple-300"
-              >
-                <LuMinus />
-              </button>
-            </div>
-            <Button
-              onClick={() => dispatch(deleteProduct(_id))}
-              theme={ButtonTheme.DELETE}
-            >
-              remove
-            </Button>
+            <ButtonsChangeQuantity product={product} />
+            <ButtonRemove keyAction="cart" id={_id} />
           </div>
         </div>
       </div>

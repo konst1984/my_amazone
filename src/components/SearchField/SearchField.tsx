@@ -19,7 +19,7 @@ const SearchField = () => {
   return (
     <div
       ref={divRef as RefObject<HTMLDivElement>}
-      className="flex w-full order-last lgx:order-3 grow gap-2 min-w-[250px] h-10 lgx:w-auto lgx:inline-flex items-center justify-between relative"
+      className="flex w-full order-last lgx:order-3 grow gap-2 min-w-[250px] h-12 lgx:w-auto lgx:inline-flex items-center justify-between relative py-1"
     >
       <input
         onChange={handleSearch}
@@ -31,7 +31,8 @@ const SearchField = () => {
       <Link
         href={path}
         onClick={() => setSearchQuery("")}
-        className="w-12 h-full bg-custom_yellow text-black
+        aria-label="View all the products found on request on a separate page"
+        className="w-12 h-10 bg-custom_yellow text-black
         text-2xl active:brightness-100 hover:brightness-75 focus-visible:brightness-75 flex items-center justify-center absolute right-0 rounded-tr-md rounded-br-md"
       >
         <HiOutlineSearch />

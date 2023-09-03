@@ -9,7 +9,7 @@ const AccountMobile = () => {
   return (
     <Link
       href="account"
-      className="relative h-full shrink-0 group sm:hidden border border-transparent hover:border-white"
+      className="relative h-full shrink-0 group sm:hidden border border-transparent hover:border-white py-1"
     >
       <span className="flex items-center text-sm">
         <span>{userInfo ? "Sign out" : "Sign in"}</span>

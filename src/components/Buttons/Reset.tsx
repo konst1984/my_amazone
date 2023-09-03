@@ -3,17 +3,20 @@ import React, { useEffect, useState } from "react";
 import { useAppDispatch } from "@/app/redux/hook";
 import Button, { ButtonTheme } from "@/components/Buttons/Button";
 import ConfirmResetModal from "@/components/ConfirmResetModal";
-import { ActionCreatorWithoutPayload } from "@reduxjs/toolkit";
+import { resetCart, resetFavorites } from "@/app/redux/features/appSlice";
 
 interface IReset {
   textButton: string;
   textModal: string;
-  actionFn:
-    | ActionCreatorWithoutPayload<"app/resetCart">
-    | ActionCreatorWithoutPayload<"app/resetFavorites">;
+  resetTarget: string;
 }
 
-const Reset = ({ textButton, textModal, actionFn }: IReset) => {
+const actionObject = {
+  cart: resetCart,
+  favorites: resetFavorites,
+};
+
+const Reset = ({ textButton, textModal, resetTarget }: IReset) => {
   const dispatch = useAppDispatch();
   const [openModal, setOpenModal] = useState(false);
   const [confirmReset, setConfirmReset] = useState(false);
@@ -24,12 +27,13 @@ const Reset = ({ textButton, textModal, actionFn }: IReset) => {
 
   useEffect(() => {
     if (confirmReset) {
-      dispatch(actionFn());
+      dispatch(actionObject[resetTarget]());
+      localStorage.removeItem(resetTarget);
     }
-  }, [actionFn, dispatch, confirmReset]);
+  }, [resetTarget, dispatch, confirmReset]);
 
   return (
-    <>
+    <div className="mt-2">
       <ConfirmResetModal
         openModal={openModal}
         setOpenModal={setOpenModal}
@@ -39,8 +43,10 @@ const Reset = ({ textButton, textModal, actionFn }: IReset) => {
       <Button onClick={handleReset} theme={ButtonTheme.DELETE}>
         {textButton}
       </Button>
-    </>
+    </div>
   );
 };
+
+Reset.displayName = "Reset";
 
 export default Reset;

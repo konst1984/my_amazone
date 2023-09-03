@@ -1,16 +1,11 @@
-"use client";
-import React from "react";
+import React, { memo } from "react";
 import FormattedPrice from "@/components/FormattedPrice";
-import Button, { ButtonTheme } from "@/components/Buttons/Button";
-import { addToCart } from "@/app/redux/features/appSlice";
-import { useAppDispatch } from "@/app/redux/hook";
 import LinkImageHover from "@/components/LinkImageHover";
+import ButtonAddCart from "@/components/Buttons/ButtonAdd";
 
-const ProductCard = ({ product }: { product: IProductProps }) => {
+const ProductCard = memo(({ product }: { product: IProductProps }) => {
   const { title, brand, category, description, isNew, oldPrice, price } =
     product;
-
-  const dispatch = useAppDispatch();
 
   return (
     <div className="flex flex-col justify-between w-full bg-white text-black p-4 border border-gray-300 rounded-lg overflow-hidden">
@@ -39,22 +34,12 @@ const ProductCard = ({ product }: { product: IProductProps }) => {
         <p className="text-xs text-gray-600 text-justify">
           {description.substring(0, 120)}
         </p>
-        <Button
-          onClick={() =>
-            dispatch(
-              addToCart({
-                ...product,
-                quantity: 1,
-              })
-            )
-          }
-          theme={ButtonTheme.YELLOW}
-        >
-          add to cart
-        </Button>
+        <ButtonAddCart product={product} />
       </div>
     </div>
   );
-};
+});
+
+ProductCard.displayName = "ProductCard";
 
 export default ProductCard;

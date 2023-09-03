@@ -16,7 +16,7 @@ const Location = () => {
   return (
     <>
       <button
-        className={`${styleDiv} items-center gap-1`}
+        className={`${styleDiv} items-center gap-1 py-1`}
         onClick={() => setOpenModal(true)}
       >
         <SlLocationPin />

@@ -9,6 +9,7 @@ import Button, { ButtonTheme } from "@/components/Buttons/Button";
 import ButtonsIcons from "@/components/Buttons/ButtonsIcons";
 import NotImage from "@/assets/images/no-image_400.webp";
 import NotFound from "@/app/(pages)/not-found";
+import ButtonAddCart from "@/components/Buttons/ButtonAdd";
 
 const buildProduct = (keys, fn) => {
   return keys.reduce((acc, current) => {
@@ -84,14 +85,7 @@ const ProductSingle = () => {
                     <FormattedPrice amount={product.oldPrice - product.price} />
                   </span>
                 </p>
-                <Button
-                  theme={ButtonTheme.YELLOW}
-                  onClick={() =>
-                    dispatch(addToCart({ ...product, quantity: 1 }))
-                  }
-                >
-                  add to cart
-                </Button>
+                <ButtonAddCart product={product} />
               </div>
             </div>
           </div>

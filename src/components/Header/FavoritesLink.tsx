@@ -1,15 +1,20 @@
-import React from "react";
+"use client";
+import React, { useEffect, useState } from "react";
 import { useAppSelector } from "@/app/redux/hook";
 import Link from "next/link";
 
 const FavoritesLink = () => {
-  const favorites = useAppSelector((state) => state.app.favoriteData);
+  const favoritesData = useAppSelector((state) => state.app.favorites);
+  const [favorites, setFavorites] = useState([]);
+
+  useEffect(() => {
+    setFavorites(favoritesData);
+  }, [favoritesData]);
+
   return (
     <Link
       href={"/favorites"}
-      className="text-xs text-gray-100 justify-start
-          flex flex-col shrink-0 px-2 border border-transparent
-          hover:border-white cursor-pointer duration-300 h-[70%] relative"
+      className="text-xs text-gray-100 justify-start flex flex-col shrink-0 px-2 py-1 border border-transparent hover:border-white cursor-pointer duration-300 h-[70%] relative"
     >
       <p>Marked</p>
       <p className="text-white font-bold">& Favorite</p>

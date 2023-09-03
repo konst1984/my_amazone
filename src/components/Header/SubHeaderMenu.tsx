@@ -4,7 +4,7 @@ import { LuMenu } from "react-icons/lu";
 import Location from "@/components/Header/Location/Location";
 import SideMenu from "@/components/SideMenu/SideMenu";
 import useSideMenuOpen from "@/hooks/useSideMenuOpen";
-import FavoritesLink from "@/components/Favorites/FavoritesLink";
+import FavoritesLink from "@/components/Header/FavoritesLink";
 
 const listItems = [
   "Today's Deals",

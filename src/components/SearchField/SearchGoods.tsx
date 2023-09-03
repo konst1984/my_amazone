@@ -8,7 +8,13 @@ type ISearchGoods = {
 const SearchGoods = ({ product }: ISearchGoods) => {
   return (
     <div className="flex items-center gap-4">
-      <Image className="w-24" src={product.image} alt="productImage" />
+      <Image
+        width={96}
+        height={100}
+        className="w-24"
+        src={product.image}
+        alt="productImage"
+      />
       <div>
         <p className="text-xs -mb-1">
           {product.brand}_{product.category}

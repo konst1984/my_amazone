@@ -1,9 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { RootState } from "@/app/redux/store";
+import { getDataFromLS } from "@/utils/getDataFromLS";
 
 export interface IAppState {
   cart: IStoreProduct[];
-  favoriteData: IStoreProduct[];
+  favorites: IStoreProduct[];
   allGoods: IStoreProduct[];
   userInfo: {
     email: string;
@@ -13,8 +14,8 @@ export interface IAppState {
 }
 
 const initialState: IAppState = {
-  cart: [],
-  favoriteData: [],
+  cart: getDataFromLS("cart"),
+  favorites: getDataFromLS("favorites"),
   allGoods: [],
   userInfo: null,
 };
@@ -25,7 +26,7 @@ export const appSlice = createSlice({
   reducers: {
     addToCart: (state, action) => {
       const existingProduct = state.cart.find(
-        (item: IStoreProduct) => item._id === action.payload._id,
+        (item: IStoreProduct) => item._id === action.payload._id
       );
       if (existingProduct) {
         existingProduct.quantity += action.payload.quantity;
@@ -34,28 +35,28 @@ export const appSlice = createSlice({
       }
     },
     addToFavorite: (state, action) => {
-      const existingProduct = state.favoriteData.find(
-        (item: IStoreProduct) => item._id === action.payload._id,
+      const existingProduct = state.favorites.find(
+        (item: IStoreProduct) => item._id === action.payload._id
       );
       if (existingProduct) {
         existingProduct.quantity += action.payload.quantity;
       } else {
-        state.favoriteData.push(action.payload);
+        state.favorites.push(action.payload);
       }
     },
     increaseQuantity: (state, action) => {
       const existingProduct = state.cart.find(
-        (item: IStoreProduct) => item._id === action.payload._id,
+        (item: IStoreProduct) => item._id === action.payload._id
       );
       existingProduct && existingProduct.quantity++;
     },
     decreaseQuantity: (state, action) => {
       const existingProduct = state.cart.find(
-        (item: IStoreProduct) => item._id === action.payload._id,
+        (item: IStoreProduct) => item._id === action.payload._id
       );
       if (existingProduct?.quantity && existingProduct?.quantity <= 1) {
         state.cart = state.cart.filter(
-          (item) => item._id !== action.payload._id,
+          (item) => item._id !== action.payload._id
         );
       } else {
         existingProduct!.quantity--;
@@ -65,8 +66,8 @@ export const appSlice = createSlice({
       state.cart = state.cart.filter((item) => item._id !== action.payload);
     },
     deleteFavorite: (state, action) => {
-      state.favoriteData = state.favoriteData.filter(
-        (item) => item._id !== action.payload,
+      state.favorites = state.favorites.filter(
+        (item) => item._id !== action.payload
       );
     },
 
@@ -74,7 +75,7 @@ export const appSlice = createSlice({
       state.cart = [];
     },
     resetFavorites: (state) => {
-      state.favoriteData = [];
+      state.favorites = [];
     },
 
     addUser: (state, action) => {
@@ -107,7 +108,7 @@ export const {
 export const selectTotalAmount = (state: RootState) =>
   state.app.cart.reduce(
     (acc, productCart) => acc + productCart.quantity * productCart.price,
-    0,
+    0
   );
 
 export const { reducer: appReducer } = appSlice;
