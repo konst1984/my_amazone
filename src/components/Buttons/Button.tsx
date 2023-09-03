@@ -34,7 +34,7 @@ const Button = ({
   const styleTheme = theme && style[theme];
   return (
     <button
-      className={`px-3 py-1 h-[30px] border border-[#D5D9D9] 
+      className={`px-3 py-1 min-h-[30px] border border-[#D5D9D9] 
       text-base h-auto first-letter:uppercase rounded-lg text-black active:scale-95 hover:brightness-90 focus-visible:brightness-75 ${styleTheme} ${classname} duration-200`}
       {...otherProps}
     >

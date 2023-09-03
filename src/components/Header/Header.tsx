@@ -63,10 +63,10 @@ const Header = () => {
             <Location />
           </div>
           <SearchField />
-          <div className="md:pt-1 w-full justify-between s:w-fit order-4 flex gap-2 self-stretch">
+          <div className="md:pt-1 w-full justify-between s:w-fit order-4 flex gap-2 self-stretch items-center">
             <Account />
             <AccountMobile />
-            <div className="hidden md:flex">
+            <div className="hidden md:flex h-full">
               <FavoritesLink />
             </div>
             <CartLink />

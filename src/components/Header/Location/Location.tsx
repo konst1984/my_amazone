@@ -4,7 +4,7 @@ import { SlLocationPin } from "react-icons/sl";
 import SetLocationModal from "@/components/Header/Location/SetLocationModal";
 
 const styleDiv =
-  'h-full text-xs text-gray-100 flex justify-center px-2 shrink-0 border border-transparent hover:border-white cursor-pointer duration-300 h-[70%]"';
+  "h-full text-xs text-gray-100 flex justify-center px-2 shrink-0 border border-transparent hover:border-white cursor-pointer duration-300 h-full";
 
 const Location = () => {
   const [openModal, setOpenModal] = useState(false);

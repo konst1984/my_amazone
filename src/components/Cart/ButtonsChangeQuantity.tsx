@@ -17,7 +17,7 @@ const ButtonsChangeQuantity = ({ product }: IButtonsChangeQuantity) => {
   useSetLocalStorage("cart");
 
   return (
-    <div className="flex items-center mt-1 justify-between border border-gray-300 px-4 py-1 rounded-full w-28 shadow-lg shadow-gray-300">
+    <div className="flex items-center justify-between border border-gray-300 px-4 py-1 rounded-full w-28 shadow-lg shadow-gray-300">
       <button
         onClick={() =>
           dispatch(

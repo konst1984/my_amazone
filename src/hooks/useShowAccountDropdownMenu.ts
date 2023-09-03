@@ -1,4 +1,4 @@
-import React, { RefObject, useEffect, useState } from "react";
+import { RefObject, useEffect, useState } from "react";
 import { useKeydown } from "@/hooks/useKeyDown";
 
 const useShowAccountDropdownMenu = (ref: RefObject<HTMLElement | null>) => {

@@ -17,12 +17,11 @@ const Account = () => {
   return (
     <>
       <div
-        className="relative h-full shrink-0 group hidden sm:block"
-        tabIndex={0}
+        className="relative h-full shrink-0 group hidden sm:flex items-center"
         ref={refAccount as RefObject<HTMLDivElement>}
       >
         {userInfo ? (
-          <button className="justify-start flex items-center sm:px-2 border border-transparent hover:border-white cursor-pointer duration-300 h-[70%] gap-1 py-1">
+          <div className="justify-start flex items-center sm:px-2 border border-transparent hover:border-white cursor-pointer duration-300 h-full gap-1 py-1">
             <Image
               width={32}
               height={32}
@@ -39,12 +38,12 @@ const Account = () => {
                 </span>
               </p>
             </div>
-          </button>
+          </div>
         ) : (
           <Link
             href="#"
             onClick={() => signIn()}
-            className="text-xs text-gray-100 flex sm:px-2 py-1 shrink-0 border border-transparent hover:border-white cursor-pointer duration-300 h-[70%] flex-col justify-start"
+            className="text-xs text-gray-100 flex sm:px-2 py-1 shrink-0 border border-transparent hover:border-white cursor-pointer duration-300 h-full flex-col justify-center"
             role="button"
           >
             <p className="font-bold">Hello, sign in</p>

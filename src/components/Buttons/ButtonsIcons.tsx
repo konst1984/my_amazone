@@ -1,8 +1,8 @@
 "use client";
-import React, { useEffect } from "react";
+import React from "react";
 import Button, { ButtonTheme } from "@/components/Buttons/Button";
 import { addToCart, addToFavorite } from "@/app/redux/features/appSlice";
-import { useAppDispatch, useAppSelector } from "@/app/redux/hook";
+import { useAppDispatch } from "@/app/redux/hook";
 import { FaHeart } from "react-icons/fa";
 import { HiShoppingCart } from "react-icons/hi";
 import useSetLocalStorage from "@/hooks/useSetLocalStorage";
@@ -17,7 +17,7 @@ const ButtonsIcons = ({ product }: { product: IProductProps }) => {
     <div
       className="w-12 h-24 absolute bottom-10 right-0
                 border-gray-400 rounded-md
-                flex flex-col gap-2 translate-x-20 group-hover:-translate-x-2 transition-transform duration-300"
+                flex flex-col gap-2 translate-x-20 group-hover:-translate-x-2 group-focus-visible:-translate-x-2 focus-within:-translate-x-2 transition-transform duration-300"
     >
       <Button
         theme={ButtonTheme.ICON}

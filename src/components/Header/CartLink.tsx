@@ -1,4 +1,4 @@
-import React, { SetStateAction, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useAppSelector } from "@/app/redux/hook";
@@ -14,13 +14,13 @@ const CartLink = () => {
   return (
     <Link
       href={"/cart"}
-      className="shrink-0 order-6 justify-start py-1
-              flex items-center sm:px-2 border border-transparent hover:border-white cursor-pointer duration-300 h-[70%] relative"
+      className="shrink-0 order-6 justify-center py-1
+              flex items-center sm:px-2 border border-transparent hover:border-white cursor-pointer duration-300 h-full relative"
     >
       <Image
         width={100}
         height={50}
-        className="w-auto object-cover h-8 self-start"
+        className="w-auto object-cover h-8 self-center"
         src="/images/cartIcon.webp"
         alt="cart icon"
       />

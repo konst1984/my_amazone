@@ -1,13 +1,5 @@
 import React from "react";
 import Image from "next/image";
-import { LuMinus, LuPlus } from "react-icons/lu";
-import { useAppDispatch } from "@/app/redux/hook";
-import {
-  decreaseQuantity,
-  deleteProduct,
-  increaseQuantity,
-} from "@/app/redux/features/appSlice";
-import Button, { ButtonTheme } from "@/components/Buttons/Button";
 import ProductCardContent from "@/components/GoodsSection/ProductCardContent";
 import NotImage from "@/assets/images/no-image_400.webp";
 import ButtonsChangeQuantity from "@/components/Cart/ButtonsChangeQuantity";
@@ -18,7 +10,6 @@ interface ICartGoodsProps {
 }
 
 const CartProduct = ({ product }: ICartGoodsProps) => {
-  const dispatch = useAppDispatch();
   const { _id, description, image, price, title, quantity, brand } = product;
 
   return (
@@ -40,7 +31,7 @@ const CartProduct = ({ product }: ICartGoodsProps) => {
             brand={brand}
             total={true}
           />
-          <div className="flex items-center gap-6">
+          <div className="flex items-center gap-6 pb-1">
             <ButtonsChangeQuantity product={product} />
             <ButtonRemove keyAction="cart" id={_id} />
           </div>

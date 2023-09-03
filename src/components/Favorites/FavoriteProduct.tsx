@@ -4,6 +4,7 @@ import ProductCardContent from "@/components/GoodsSection/ProductCardContent";
 import NotImage from "@/assets/images/no-image_400.webp";
 import ButtonAddCart from "@/components/Buttons/ButtonAdd";
 import ButtonRemove from "@/components/Buttons/ButtonRemove";
+import LinkImageHover from "@/components/LinkImageHover";
 
 interface IFavoriteProps extends IProductProps {
   quantity: number;
@@ -17,15 +18,16 @@ const FavoriteProduct = ({ product, index }: IFavorite) => {
   const { _id, description, price, title, quantity, brand } = product;
 
   return (
-    <div className="bg-gray-100 rounded-lg flex flex-col md:flex-row py-2 items-center gap-4 mb-2 mt-2">
-      <Image
-        src={product.image || NotImage}
-        alt="Product image"
-        width={150}
-        height={150}
-        priority={index === 0 && true}
-        className="w-auto h-auto"
-      />
+    <div className="bg-gray-100 rounded-lg flex flex-col md:flex-row py-2 items-center gap-4 mb-2 mt-2 px-1">
+      <LinkImageHover product={product} />
+      {/*<Image*/}
+      {/*  src={product.image || NotImage}*/}
+      {/*  alt="Product image"*/}
+      {/*  width={150}*/}
+      {/*  height={150}*/}
+      {/*  priority={index === 0 && true}*/}
+      {/*  className="w-auto h-auto"*/}
+      {/*/>*/}
       <div className="flex products-center px-2 gap-4">
         <div className="flex flex-col gap-1">
           <ProductCardContent

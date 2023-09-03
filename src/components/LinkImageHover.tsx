@@ -15,18 +15,16 @@ const LinkImageHover = ({
   };
 
   return (
-    <div className="relative group overflow-hidden">
-      <Link href={href}>
-        <Image
-          className="w-full h-full max-h-80 object-cover scale-90 hover:scale-100 transition-transform duration-300"
-          width={300}
-          height={300}
-          src={product.image || NotImage}
-          alt={product.title}
-        />
-      </Link>
+    <Link href={href} className="group relative overflow-hidden">
+      <Image
+        className="w-full h-full max-h-80 object-cover scale-90 hover:scale-100 focus-visible:scale-100 transition-transform duration-300"
+        width={300}
+        height={300}
+        src={product.image || NotImage}
+        alt={product.title}
+      />
       <ButtonsIcons product={product} />
-    </div>
+    </Link>
   );
 };
 
