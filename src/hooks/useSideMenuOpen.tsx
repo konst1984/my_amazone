@@ -1,23 +1,23 @@
 import React, { Dispatch, SetStateAction, useEffect, useState } from "react";
 
 const useSideMenuOpen = () => {
-  const [openSlideMenu, setOpenSlideMenu] = useState<
+  const [isOpen, setOpenSideMenu] = useState<
     boolean | Dispatch<SetStateAction<boolean>>
   >(false);
 
-  const showSlideMenu = () => {
-    if (!openSlideMenu) {
-      setOpenSlideMenu(true);
+  const showSideMenu = () => {
+    if (!isOpen) {
+      setOpenSideMenu(true);
     }
   };
 
   useEffect(() => {
-    if (openSlideMenu) {
+    if (isOpen) {
       document.body.classList.add("fixed");
     } else document.body.classList.remove("fixed");
-  }, [openSlideMenu]);
+  }, [isOpen]);
 
-  return {openSlideMenu, setOpenSlideMenu, showSlideMenu};
+  return { isOpen, setOpenSideMenu, showSideMenu };
 };
 
 export default useSideMenuOpen;

@@ -62,7 +62,7 @@ const SideMenu = ({ open, setOpen }: ISideMenu) => {
                 </div>
               </motion.div>
             </div>,
-            document.body,
+            document.body
           )}
         </>
       )}

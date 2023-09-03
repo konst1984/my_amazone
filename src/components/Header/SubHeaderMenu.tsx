@@ -15,7 +15,8 @@ const listItems = [
 ];
 
 const SubHeaderMenu = () => {
-  const {openSideMenu, setOpenSideMenu, showSideMenu} = useSideMenuOpen();
+  const { isOpen, setOpenSideMenu, showSideMenu } = useSideMenuOpen();
+
   return (
     <>
       <div className="w-full min-h-[40px] bg-custom_light_blue text-sm text-white px-4 py-2 flex items-center">
@@ -40,7 +41,7 @@ const SubHeaderMenu = () => {
           <FavoritesLink />
         </div>
       </div>
-      <SideMenu open={openSideMenu} setOpen={setOpenSideMenu} />
+      <SideMenu open={isOpen} setOpen={setOpenSideMenu} />
     </>
   );
 };

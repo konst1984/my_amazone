@@ -1,7 +1,7 @@
 {
   "name": "my_amazon",
   "version": "0.1.0",
-  "homepage": "https://master--comfy-lily-1196c6.netlify.app/",
+  "homepage": "https://my-amazone.vercel.app/",
   "private": false,
   "scripts": {
     "dev": "next dev",

@@ -18,7 +18,7 @@ import AccountMobile from "@/components/Header/Account/AccountMobile";
 
 const Header = () => {
   const { data: session } = useSession();
-  const {openSideMenu, setOpenSideMenu, showSideMenu} = useSideMenuOpen();
+  const { isOpen, setOpenSideMenu, showSideMenu } = useSideMenuOpen();
 
   const dispatch = useAppDispatch();
   const cart = useAppSelector((state) => state.app.cart);
@@ -88,7 +88,7 @@ const Header = () => {
           </div>
         </div>
       </div>
-      <SideMenu open={openSideMenu} setOpen={setOpenSideMenu} />
+      <SideMenu open={isOpen} setOpen={setOpenSideMenu} />
       <SubHeaderMenu />
     </>
   );

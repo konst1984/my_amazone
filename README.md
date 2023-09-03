@@ -18,7 +18,7 @@ pnpm dev
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 
-This project [Demo](https://master--comfy-lily-1196c6.netlify.app/).
+This project [Demo](https://my-amazone.vercel.app/).
 
 ## Available Scripts
 
