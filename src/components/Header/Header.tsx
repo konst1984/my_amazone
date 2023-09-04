@@ -6,7 +6,7 @@ import Link from "next/link";
 import { useAppDispatch } from "@/app/redux/hook";
 import { useSession } from "next-auth/react";
 import { addUser } from "@/app/redux/features/appSlice";
-import SearchField from "@/components/SearchField/SearchField";
+import SearchField from "@/components/Search/SearchField";
 import Location from "@/components/Header/Location/Location";
 import SideMenu from "@/components/SideMenu/SideMenu";
 import SubHeaderMenu from "@/components/Header/SubHeaderMenu";

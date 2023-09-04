@@ -1,3 +1,6 @@
+import OverFooter from "@/components/Footer/OverFooter";
+import React from "react";
+
 interface IFooterItems {
   title: string;
   description: string;
@@ -38,7 +41,7 @@ export const itemsList: IFooterItems[] = [
   },
   {
     title: "Home Services",
-    description: "Experienced Pros\n Happiness Guarantee\t",
+    description: "Experienced Pros\n Happiness Guarantee",
   },
   {
     title: "Amazon Web Services",
@@ -46,7 +49,7 @@ export const itemsList: IFooterItems[] = [
   },
   {
     title: "Audible",
-    description: "Listen to Books & Original\n Audio Performances\t",
+    description: "Listen to Books & Original\n Audio Performances",
   },
   {
     title: "Box Office Mojo",
@@ -62,7 +65,7 @@ export const itemsList: IFooterItems[] = [
   },
   {
     title: "Fabric",
-    description: "Sewing, Quilting\n & Knitting\t",
+    description: "Sewing, Quilting\n & Knitting",
   },
   {
     title: "Goodreads",
@@ -78,11 +81,11 @@ export const itemsList: IFooterItems[] = [
   },
   {
     title: "Kindle Direct Publishing",
-    description: "Indie Digital & Print Publishing\n Made Easy\t",
+    description: "Indie Digital & Print Publishing\n Made Easy",
   },
   {
     title: "Prime Video Direct",
-    description: "Video Distribution\n Made Easy\t",
+    description: "Video Distribution\n Made Easy",
   },
   {
     title: "Shopbop",
@@ -106,11 +109,11 @@ export const itemsList: IFooterItems[] = [
   },
   {
     title: "Blink",
-    description: "Smart Security\n for Every Home\t",
+    description: "Smart Security\n for Every Home",
   },
   {
     title: "Neighbors App",
-    description: "Real-Time Crime\n & Safety Alerts\t",
+    description: "Real-Time Crime\n & Safety Alerts",
   },
   {
     title: "Amazon Subscription Boxes",
@@ -118,30 +121,35 @@ export const itemsList: IFooterItems[] = [
   },
   {
     title: "PillPack",
-    description: "Pharmacy Simplified\t",
+    description: "Pharmacy Simplified",
   },
 ];
 
 const Footer = () => {
   return (
-    <div className="w-full bg-custom_blue text-xs text-gray-300 flex flex-col items-center justify-center">
-      <div className="hidden lg:block py-[30px] max-w-[1000px]">
-        <ul className="lg:grid grid-cols-6 gap-[20px]">
-          {itemsList.map((item) => (
-            <li key={item.title} className="flex flex-col px-2">
-              <span>{item.title}</span>
-              <span className="text-stone-400">{item.description}</span>
-            </li>
-          ))}
-        </ul>
-      </div>
-      <div className="w-full flex flex-col items-center p-[10px] pb-[30px]">
-        <div className="flex gap-2 items-center">
-          <span className="text-center">Conditions of Use</span>
-          <span className="text-center">Privacy Notice</span>
-          <span className="text-center">Your Ads Privacy Choices</span>
+    <div className="z-[60]">
+      <OverFooter />
+      <div className="w-full bg-custom_blue text-xs text-gray-300 flex flex-col items-center justify-center">
+        <div className="hidden lg:block py-[30px] max-w-[1000px]">
+          <ul className="lg:grid grid-cols-6 gap-[20px]">
+            {itemsList.map((item) => (
+              <li key={item.title} className="flex flex-col px-2">
+                <span>{item.title}</span>
+                <span className="text-stone-400">{item.description}</span>
+              </li>
+            ))}
+          </ul>
         </div>
-        <p className="pt-2">© 1996-2023, Amazon.com, Inc. or its affiliates</p>
+        <div className="w-full flex flex-col items-center p-[10px] pb-[30px]">
+          <div className="flex gap-2 items-center">
+            <span className="text-center">Conditions of Use</span>
+            <span className="text-center">Privacy Notice</span>
+            <span className="text-center">Your Ads Privacy Choices</span>
+          </div>
+          <p className="pt-2">
+            © 1996-2023, Amazon.com, Inc. or its affiliates
+          </p>
+        </div>
       </div>
     </div>
   );

@@ -26,7 +26,7 @@ const CartLink = () => {
       />
       <p className="text-xs text-white font-bold mt-2">Cart</p>
       <span className="absolute text-custom_yellow left-[21px] text-sm top-0 sm:left-[29px] font-semibold">
-        {cart ? cart.length : 0}
+        {cart.length || null}
       </span>
     </Link>
   );

@@ -18,6 +18,7 @@ const useAutocompletedSearchField = (
   useKeydown("Escape", () => setSearchQuery(""), !!searchQuery);
 
   useEffect(() => {
+    if (!searchQuery) return;
     const filtered = allProducts.filter((item: IStoreProduct) =>
       item.title.toLocaleLowerCase().startsWith(searchQuery.toLowerCase())
     );

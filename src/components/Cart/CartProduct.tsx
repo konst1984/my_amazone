@@ -13,11 +13,11 @@ const CartProduct = ({ product }: ICartGoodsProps) => {
   const { _id, description, image, price, title, quantity, brand } = product;
 
   return (
-    <div className="bg-gray-100 rounded-lg flex items-center gap-4 p-2">
+    <div className="bg-gray-100 flex-col md:flex-row rounded-lg flex items-center gap-4 p-2 min-w-[250px]">
       <Image
-        className="object-cover"
-        width={150}
-        height={150}
+        className="object-cover max-h-[230px]"
+        width={200}
+        height={230}
         src={image || NotImage}
         alt="productImage"
       />

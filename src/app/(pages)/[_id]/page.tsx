@@ -7,6 +7,8 @@ import ButtonsIcons from "@/components/Buttons/ButtonsIcons";
 import NotImage from "@/assets/images/no-image_400.webp";
 import NotFound from "@/app/(pages)/not-found";
 import ButtonAddCart from "@/components/Buttons/ButtonAdd";
+import useHasMounted from "@/hooks/useHasMounted";
+import SingleProductSkeleton from "@/components/SingleProductSkeleton";
 
 const buildProduct = (keys: string[], fn: (value: string) => string | null) => {
   return keys.reduce(
@@ -44,7 +46,7 @@ const arrKeysProduct: string[] = [
 
 const ProductSingle = () => {
   const searchParams = useSearchParams();
-
+  const hasMounted = useHasMounted();
   const [product, setProduct] = useState<IProductProps | null>(null);
 
   useEffect(() => {
@@ -55,7 +57,11 @@ const ProductSingle = () => {
     setProduct(prod);
   }, [searchParams]);
 
-  if (!product) {
+  if (!hasMounted) {
+    return <SingleProductSkeleton />;
+  }
+
+  if (!product && hasMounted) {
     return <NotFound />;
   }
 
@@ -74,7 +80,7 @@ const ProductSingle = () => {
               <ButtonsIcons product={product} />
             </div>
             <div className="text-black md:col-span-2 flex flex-col gap-3 justify-center p-4">
-              <p className="text-xs md:text-sm text-custom_blue font-semibold -mb-3">
+              <p className="text-sm text-custom_blue font-semibold -mb-3">
                 {product.category} {product.brand}
               </p>
               <h1 className="text-xl md:text-3xl tracking-wide font-semibold">

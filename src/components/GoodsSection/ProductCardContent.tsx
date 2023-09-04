@@ -5,7 +5,7 @@ interface IProductCardContent {
   price: number;
   title: string;
   description: string;
-  quantity: number;
+  quantity?: number;
   brand: string;
   total?: boolean;
 }

@@ -20,7 +20,7 @@ const Wrapper = ({
     dispatch(setAllGoods(goods));
   }, [dispatch, goods]);
 
-  return <div>{children}</div>;
+  return <>{children}</>;
 };
 
 export default Wrapper;

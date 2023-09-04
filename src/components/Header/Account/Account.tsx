@@ -27,9 +27,9 @@ const Account = () => {
               height={32}
               src={userInfo.image}
               alt="userImage"
-              className="rounded-full object-cover self-start"
+              className="rounded-full object-cover self-center"
             />
-            <div className="text-xs text-start text-gray-100 flex flex-col justify-between self-start">
+            <div className="text-xs text-start text-gray-100 flex flex-col justify-between self-center">
               <p className="text-white font-bold">{userInfo.name}</p>
               <p className="flex flex-row items-end">
                 {userInfo.email}{" "}

@@ -9,7 +9,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 const Slider = () => {
   return (
-    <div className="relative max-h-[350px]">
+    <div className="relative max-h-[300px]">
       <Carousel
         autoPlay
         infiniteLoop

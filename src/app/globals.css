@@ -8,6 +8,7 @@
   --foreground-rgb: 0, 0, 0;
   --background: #f3f4f6;
   --background-invert: #2f2f2f;
+  --count:2;
 
 }
 
@@ -55,8 +56,8 @@ li{
 .loader {
   display: block;
   margin: auto;
-  color: gray;
-  font-size: 10px;
+  color: white;
+  font-size: 15px;
   text-indent: -9999em;
   transform: translateZ(0);
   animation-delay: -0.16s;
@@ -115,4 +116,16 @@ li{
 
 *::-webkit-scrollbar-thumb:active {
   background-color: #febd69;
+}
+
+@media(max-width: 839px){
+  .skeleton:nth-last-child(-n + 2) {
+    display: none;
+  }
+}
+
+@media(min-width: 840px) and (max-width: 1279px){
+  .skeleton:last-child {
+    display: none;
+  }
 }

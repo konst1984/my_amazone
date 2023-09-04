@@ -3,19 +3,17 @@ import React, { RefObject, useRef } from "react";
 import { HiOutlineSearch } from "react-icons/hi";
 import Link from "next/link";
 import useAutocompletedSearchField from "@/hooks/useAutocompletedSearchField";
-import SearchGoods from "@/components/SearchField/SearchGoods";
+import SearchGoods from "@/components/Search/SearchGoods";
 
 const SearchField = () => {
   const divRef = useRef<HTMLDivElement | null>(null);
   const { handleSearch, searchQuery, filteredGoods, setSearchQuery } =
     useAutocompletedSearchField(divRef);
 
-  const handleClick = () => {
-    if (!searchQuery) return;
-  };
   const path = searchQuery
     ? { pathname: "/search", query: { query: searchQuery } }
     : "";
+
   return (
     <div
       ref={divRef as RefObject<HTMLDivElement>}

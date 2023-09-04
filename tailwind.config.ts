@@ -8,7 +8,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      backgroundImage: {},
+      gridTemplateColumns: {
+        favorite: "minmax(240px, 30%) 1fr",
+      },
       screens: {
         xs: "320px",
         s: "380px",

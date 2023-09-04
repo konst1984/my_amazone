@@ -18,7 +18,7 @@ pnpm dev
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 
-This project [Demo](https://my-amazone.vercel.app/).
+This project [Demo](https://my-amazone-1duwrgdub-konst1984.vercel.app/).
 
 ## Available Scripts
 
@@ -46,14 +46,16 @@ Used by the library:
 
 ![image](src/assets/images/screens/cart.webp)
 
-![image](src/assets/images/screens/searchpage.webp)
-
 ![image](src/assets/images/screens/fav.webp)
+
+![image](src/assets/images/screens/searchpage.webp)
 
 ![image](src/assets/images/screens/autocomplete.webp)
 
 ![image](src/assets/images/screens/payment.webp)
 
 ![image](src/assets/images/screens/sidemenu.webp)
+
+![image](src/assets/images/screens/location.webp)
 
 ![image](src/assets/images/screens/auth.webp)

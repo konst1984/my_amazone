@@ -3,13 +3,16 @@ import React, { useEffect, useState } from "react";
 import { useAppSelector } from "@/app/redux/hook";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
-import FoundGoodsCard from "@/components/SearchField/FoundGoodsCard";
+import FoundGoodsCard from "@/components/Search/FoundGoodsCard";
+import useHasMounted from "@/hooks/useHasMounted";
+import Skeleton from "@/components/Search/Skeleton";
 
 const SearchPage = () => {
   const searchParams = useSearchParams();
   const allProducts = useAppSelector((state) => state.app.allGoods);
   const searchValue = searchParams?.get("query");
   const [foundGoods, setFoundGoods] = useState<IStoreProduct[] | []>([]);
+  const hasMounted = useHasMounted();
 
   useEffect(() => {
     if (!searchValue) return;
@@ -20,9 +23,13 @@ const SearchPage = () => {
     setFoundGoods(filtered);
   }, [allProducts, searchValue]);
 
+  if (!hasMounted) {
+    return <Skeleton />;
+  }
+
   return (
     <div className="grow grid w-full m-auto px-6 gap-10 py-4 text-black">
-      {foundGoods.length > 0 ? (
+      {hasMounted && foundGoods.length > 0 ? (
         <div className="flex flex-col gap-4">
           <div className="bg-white p-4 rounded-lg">
             <div className="flex items-center justify-between border-b-[1px] border-b-gray-400 pb-1 mb-2">

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { useAppSelector } from "@/app/redux/hook";
 
 const useSetLocalStorage = (key: string) => {

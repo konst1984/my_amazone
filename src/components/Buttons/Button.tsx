@@ -21,7 +21,7 @@ const style: Record<StyleTheme, string> = {
   yellow: "shadow-none bg-custom_yellow w-fit",
   confirm: "shadow-none bg-blue-600 text-white",
   delete:
-    "w-max bg-gray-400 rounded-lg hover:bg-red-600 hover:text-white focus-visible:bg-red-600 focus-visible:text-white",
+    "w-max bg-custom_light_blue rounded-lg hover:bg-red-600 text-white focus-visible:bg-red-600 focus-visible:text-white",
   icon: "w-full h-full border-b-[1px] border-b-gray-400 flex items-center justify-center text-xl hover:bg-custom_yellow focus-visible:bg-custom_yellow bg-stone-200",
 };
 

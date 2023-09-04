@@ -1,7 +1,7 @@
 {
   "name": "my_amazon",
   "version": "0.1.0",
-  "homepage": "https://my-amazone.vercel.app/",
+  "homepage": "https://my-amazone-1duwrgdub-konst1984.vercel.app/",
   "private": false,
   "scripts": {
     "dev": "next dev",
@@ -23,6 +23,7 @@
     "eslint": "8.48.0",
     "eslint-config-next": "13.4.19",
     "framer-motion": "^10.16.1",
+    "github-pages": "^3.0.2",
     "next": "13.4.19",
     "next-auth": "^4.23.1",
     "postcss": "8.4.28",
