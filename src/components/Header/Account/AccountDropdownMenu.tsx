@@ -22,7 +22,7 @@ const AccountDropdownMenu = ({ show }: { show: boolean }) => {
             exit={{ opacity: 0 }}
             className={` 
           absolute ${position} w-max bg-gray-200 text-black p-1 text-xs
-          before:block before:absolute before:w-5 before:h-5 before:bg-gray-200 before:-top-1 before:rotate-45 before:left-[70%]`}
+          before:block before:absolute before:w-5 before:h-5 before:bg-gray-200 before:-top-1 before:rotate-45 before:left-[70%] z-20`}
           >
             <div className="flex flex-col border border-gray-300 ">
               <LoginSign />

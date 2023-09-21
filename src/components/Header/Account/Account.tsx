@@ -21,7 +21,10 @@ const Account = () => {
         ref={refAccount as RefObject<HTMLDivElement>}
       >
         {userInfo ? (
-          <div className="justify-start flex items-center sm:px-2 border border-transparent hover:border-white cursor-pointer duration-300 h-full gap-1 py-1">
+          <div
+            tabIndex="0"
+            className="justify-start flex items-center sm:px-2 border border-transparent hover:border-white cursor-pointer duration-300 h-full gap-1 py-1"
+          >
             <Image
               width={32}
               height={32}
