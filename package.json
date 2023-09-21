@@ -1,7 +1,7 @@
 {
   "name": "my_amazon",
   "version": "0.1.0",
-  "homepage": "https://my-amazone-1duwrgdub-konst1984.vercel.app/",
+  "homepage": "https://custom-amazon.vercel.app/",
   "private": false,
   "scripts": {
     "dev": "next dev",

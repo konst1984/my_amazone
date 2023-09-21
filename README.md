@@ -18,7 +18,7 @@ pnpm dev
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 
-This project [Demo](https://my-amazone-1duwrgdub-konst1984.vercel.app/).
+This project [Demo](https://custom-amazon.vercel.app/).
 
 ## Available Scripts
 
